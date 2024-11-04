@@ -6,3 +6,18 @@ body{
   background: #000;
 }
 
+/* globals.css or Hero.module.css */
+
+.grid-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr); /* Adjust as needed */
+  grid-template-rows: repeat(8, 1fr);     /* Adjust as needed */
+  pointer-events: none;                   /* Prevent interaction */
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;           /* Adjust grid cell size */
+  opacity: 1;                           /* Lower opacity for subtlety */
+}

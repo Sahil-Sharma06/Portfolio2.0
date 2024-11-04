@@ -8,11 +8,12 @@ module.exports = {
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  backgroundColor: {
-    'navlinks-bg': '#61616124',
-  },
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        'custom-dark': '#041423',
+      },
+    },
   },
   plugins: [],
 }
