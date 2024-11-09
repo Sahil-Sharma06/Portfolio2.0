@@ -3,6 +3,7 @@
 import React from 'react';
 import Navbar from './navbar';
 import About from './aboutme'
+import Services from './services'
 export default function Hero() {
   return (
     <div>
@@ -36,6 +37,7 @@ export default function Hero() {
         </div>
       </section>
       <About/>
+      <Services/>
     </div>
   );
 }
