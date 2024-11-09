@@ -87,7 +87,7 @@ export default function Services() {
         {/* Title */}
         <div className="text-center">
           <h2 className="mb-10 text-4xl font-bold">
-         <span className="text-purple-500">Services</span>
+         <span className="text-purple-500">Services & Skills</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-8 mb-16 md:grid-cols-3">
