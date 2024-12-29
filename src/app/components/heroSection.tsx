@@ -1,16 +1,15 @@
 "use client";
+import Image from "next/image";
+import React from "react";
+import Navbar from "./navbar";
+import About from "./aboutme";
+import Services from "./services";
 
-import React from 'react';
-import Navbar from './navbar';
-import About from './aboutme'
-import Services from './services'
 export default function Hero() {
   return (
     <div>
       <Navbar />
-      <section
-        className="relative w-full h-[974px] pt-[106px] flex flex-col items-center justify-center text-center bg-gradient-to-b from-gray-900 to-black"
-      >
+      <section className="relative w-full h-[974px] pt-[106px] flex flex-col items-center justify-center text-center bg-gradient-to-b from-gray-900 to-black">
         {/* Grid Overlay */}
         <div className="absolute inset-0 grid-overlay"></div>
 
@@ -18,7 +17,7 @@ export default function Hero() {
         <div className="relative z-10">
           {/* Main Title */}
           <h1 className="text-5xl font-bold text-transparent md:text-6xl lg:text-7xl bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
-            Hey I’m Sahil Sharma
+            Hey I&apos;m Sahil Sharma
             <br />
             Full Stack Developer
           </h1>
@@ -32,12 +31,18 @@ export default function Hero() {
 
           {/* Decorative Graphic */}
           <div className="mt-10 w-full max-w-5xl h-72 md:h-96 lg:h-[450px] bg-contain bg-no-repeat">
-            <img src="/heroImage.png" alt="Decorative Graphic" className="object-cover w-full h-full" />
+            <Image
+              src="/heroImage.png"
+              alt="Decorative Graphic"
+              className="object-cover w-full h-full"
+              width={800}
+              height={400}
+            />
           </div>
         </div>
       </section>
-      <About/>
-      <Services/>
+      <About />
+      <Services />
     </div>
   );
 }

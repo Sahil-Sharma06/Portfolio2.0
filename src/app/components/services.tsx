@@ -3,7 +3,7 @@
 import React from 'react';
 import { RiNextjsFill, RiReactjsFill } from "react-icons/ri";
 import { FaNodeJs, FaJava, FaPython, FaGitAlt, FaFigma, FaDatabase } from "react-icons/fa";
-import { SiCplusplus, SiJavascript, SiTypescript, SiExpress, SiTailwindcss, SiBootstrap, SiFastapi, SiMysql, SiMongodb, SiPostgresql, SiFirebase, SiPostman, SiHtml5, SiCss3, SiSass, SiJquery, SiGraphql } from "react-icons/si";
+import { SiCplusplus, SiTypescript, SiExpress, SiTailwindcss, SiBootstrap, SiFastapi, SiMysql, SiMongodb, SiPostgresql, SiFirebase, SiPostman, SiHtml5, SiCss3, SiSass, SiJquery, SiGraphql } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 
 export default function Services() {
