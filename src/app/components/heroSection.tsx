@@ -5,7 +5,7 @@ import Navbar from "./navbar";
 import About from "./aboutme";
 import Services from "./services";
 import Projects from "./projects"; // Import the Projects component
-
+import Contact from "./contact";
 export default function HeroSection() {
   return (
     <div>
@@ -39,6 +39,7 @@ export default function HeroSection() {
               className="object-cover w-full h-full"
               width={800}
               height={400}
+              priority
             />
           </div>
         </div>
@@ -52,6 +53,8 @@ export default function HeroSection() {
 
       {/* Projects Section */}
         <Projects />
+
+        <Contact/>
     </div>
   );
 }
