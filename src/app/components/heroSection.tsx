@@ -4,11 +4,13 @@ import React from "react";
 import Navbar from "./navbar";
 import About from "./aboutme";
 import Services from "./services";
+import Projects from "./projects"; // Import the Projects component
 
-export default function Hero() {
+export default function HeroSection() {
   return (
     <div>
       <Navbar />
+      {/* Hero Section */}
       <section className="relative w-full h-[974px] pt-[106px] flex flex-col items-center justify-center text-center bg-gradient-to-b from-gray-900 to-black">
         {/* Grid Overlay */}
         <div className="absolute inset-0 grid-overlay"></div>
@@ -41,8 +43,15 @@ export default function Hero() {
           </div>
         </div>
       </section>
+
+      {/* About Section */}
       <About />
+
+      {/* Services Section */}
       <Services />
+
+      {/* Projects Section */}
+        <Projects />
     </div>
   );
 }
