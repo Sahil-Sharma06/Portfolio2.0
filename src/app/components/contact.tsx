@@ -8,7 +8,6 @@ import {
   FaMedium,
   FaLinkedin,
   FaEnvelope,
-  FaPhone,
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si"; // Import LeetCode icon
@@ -28,12 +27,12 @@ export default function Contact() {
           {/* Email */}
           <div className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-white border border-gray-500 rounded-lg">
             <FaEnvelope />
-            thisissharma@gmail.com
+            <span>thisissharma@gmail.com</span>
           </div>
           {/* Location */}
           <div className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-white border border-gray-500 rounded-lg">
             <FaMapMarkerAlt />
-            Bokaro Steel City, India
+            <span>Bokaro Steel City, India</span>
           </div>
         </div>
       </div>
@@ -44,63 +43,63 @@ export default function Contact() {
         <div className="flex flex-wrap justify-center gap-6">
           {/* GitHub */}
           <a
-            href="https://github.com/"
+            href="https://github.com/Sahil-Sharma06/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300"
           >
             <FaGithub className="text-gray-800" />
-            GitHub
+            <span>GitHub</span>
           </a>
           {/* Twitter */}
           <a
-            href="https://twitter.com/"
+            href="https://x.com/Sharmaa_ji06"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300"
           >
             <FaTwitter className="text-black" />
-            Twitter
+            <span>Twitter</span>
           </a>
           {/* Medium */}
           <a
-            href="https://medium.com/"
+            href="https://medium.com/@thisisssharma"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300"
           >
             <FaMedium className="text-black" />
-            Medium
+            <span>Medium</span>
           </a>
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/sahil-sharma-a735b4247/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300"
           >
             <FaLinkedin className="text-blue-700" />
-            LinkedIn
+            <span>LinkedIn</span>
           </a>
           {/* LeetCode */}
           <a
-            href="https://leetcode.com/your-profile" // Replace with your LeetCode profile link
+            href="https://leetcode.com/u/SSharma06/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300"
           >
             <SiLeetcode className="text-orange-500" />
-            LeetCode
+            <span>LeetCode</span>
           </a>
-           {/* Instagram */}
-           <a
-            href="https://www.instagram.com/"
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/sharma_ji0612/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300"
           >
             <FaInstagram className="text-purple-500" />
-            Instagram
+            <span>Instagram</span>
           </a>
         </div>
       </div>
