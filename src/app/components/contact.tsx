@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   FaInstagram,
   FaGithub,
@@ -11,12 +11,33 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import { AiOutlineCheckCircle } from "react-icons/ai"; // Import green tick icon
 
 export default function Contact() {
+  const [showNotification, setShowNotification] = useState(false);
+
+  const handleCopyEmail = () => {
+    const email = "thisissharma@gmail.com";
+    navigator.clipboard.writeText(email).then(() => {
+      setShowNotification(true);
+      setTimeout(() => {
+        setShowNotification(false);
+      }, 3000); // Hide the notification after 3 seconds
+    });
+  };
+
   return (
     <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-10 text-white bg-gradient-to-b from-gray-900 to-black font-poppins">
       {/* Grid Overlay Background */}
       <div className="absolute inset-0 grid-overlay"></div>
+
+      {/* Notification Popup */}
+      {showNotification && (
+        <div className="fixed z-50 flex items-center gap-2 px-4 py-2 text-sm text-black transition-all duration-300 transform -translate-x-1/2 bg-white rounded-lg shadow-lg top-5 left-1/2 md:text-base">
+          <span>Email copied to clipboard!</span>
+          <AiOutlineCheckCircle className="w-5 h-5 text-green-400" />
+        </div>
+      )}
 
       {/* Get in Touch Section */}
       <div className="relative z-10 mb-12 text-center">
@@ -25,7 +46,11 @@ export default function Contact() {
         </h1>
         <div className="flex flex-wrap justify-center gap-6 mt-8">
           {/* Email */}
-          <div className="flex items-center gap-2 px-4 py-2 text-base font-medium text-white border border-gray-500 rounded-lg md:text-lg font-open-sans">
+          <div
+            className="flex items-center gap-2 px-4 py-2 text-base font-medium text-white border border-gray-500 rounded-lg cursor-pointer md:text-lg font-open-sans hover:bg-gray-800"
+            onClick={handleCopyEmail}
+            title="Click to copy email"
+          >
             <FaEnvelope />
             <span>thisissharma@gmail.com</span>
           </div>
