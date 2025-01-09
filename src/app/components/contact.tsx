@@ -1,7 +1,17 @@
 "use client";
 
 import React from "react";
-import { FaInstagram, FaGithub, FaTwitter, FaMedium, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaGithub,
+  FaTwitter,
+  FaMedium,
+  FaLinkedin,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+import { SiLeetcode } from "react-icons/si"; // Import LeetCode icon
 
 export default function Contact() {
   return (
@@ -20,8 +30,6 @@ export default function Contact() {
             <FaEnvelope />
             thisissharma@gmail.com
           </div>
-          {/* Phone */}
-         
           {/* Location */}
           <div className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-white border border-gray-500 rounded-lg">
             <FaMapMarkerAlt />
@@ -34,16 +42,6 @@ export default function Contact() {
       <div className="relative z-10 text-center">
         <h2 className="mb-8 text-4xl font-bold">Follow Me</h2>
         <div className="flex flex-wrap justify-center gap-6">
-          {/* Instagram */}
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300"
-          >
-            <FaInstagram className="text-purple-500" />
-            Instagram
-          </a>
           {/* GitHub */}
           <a
             href="https://github.com/"
@@ -83,6 +81,26 @@ export default function Contact() {
           >
             <FaLinkedin className="text-blue-700" />
             LinkedIn
+          </a>
+          {/* LeetCode */}
+          <a
+            href="https://leetcode.com/your-profile" // Replace with your LeetCode profile link
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300"
+          >
+            <SiLeetcode className="text-orange-500" />
+            LeetCode
+          </a>
+           {/* Instagram */}
+           <a
+            href="https://www.instagram.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-4 py-2 text-lg font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300"
+          >
+            <FaInstagram className="text-purple-500" />
+            Instagram
           </a>
         </div>
       </div>
