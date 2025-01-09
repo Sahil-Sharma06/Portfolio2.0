@@ -102,9 +102,6 @@ export default function Services() {
             <p className="mt-4 text-gray-300">
               Specializing in creating dynamic, responsive, and user-friendly web applications using React, Node.js, and JavaScript. Focus on seamless user experiences with robust backend functionality.
             </p>
-            <button className="mt-6 text-purple-400 hover:text-purple-500">
-              Explore More &rarr;
-            </button>
           </div>
 
           {/* Service Card - API Development & Integration */}
@@ -118,9 +115,6 @@ export default function Services() {
             <p className="mt-4 text-gray-300">
               Skilled in API development using FastAPI and Node.js, creating robust, scalable RESTful APIs that facilitate seamless communication across systems.
             </p>
-            <button className="mt-6 text-purple-400 hover:text-purple-500">
-              Explore More &rarr;
-            </button>
           </div>
 
           {/* Service Card - Database Management */}
@@ -134,9 +128,6 @@ export default function Services() {
             <p className="mt-4 text-gray-300">
               Experienced with MySQL, MongoDB, and PostgreSQL for building and managing scalable, secure data storage solutions to support your application needs.
             </p>
-            <button className="mt-6 text-purple-400 hover:text-purple-500">
-              Explore More &rarr;
-            </button>
           </div>
         </div>
 

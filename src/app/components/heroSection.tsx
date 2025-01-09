@@ -15,15 +15,15 @@ export default function HeroSection() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative w-full h-[974px] pt-[106px] flex flex-col items-center justify-center text-center bg-gradient-to-b from-gray-900 to-black"
+        className="relative w-full min-h-screen pt-[106px] flex flex-col items-center justify-center text-center bg-gradient-to-b from-gray-900 to-black"
       >
         {/* Grid Overlay */}
         <div className="absolute inset-0 grid-overlay"></div>
 
         {/* Main Content */}
-        <div className="relative z-10">
+        <div className="relative z-10 px-4 md:px-6 lg:px-10">
           {/* Main Title */}
-          <h1 className="text-5xl font-bold text-transparent md:text-6xl lg:text-7xl bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+          <h1 className="text-4xl font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
             Hey I&apos;m Sahil Sharma
             <br />
             Full Stack Developer
@@ -31,14 +31,14 @@ export default function HeroSection() {
 
           {/* Subtitle Text */}
           <div className="flex justify-center mt-6">
-            <p className="max-w-xl text-lg text-center text-gray-300 md:text-xl lg:text-2xl">
+            <p className="max-w-lg text-base text-center text-gray-300 sm:text-lg md:text-xl lg:text-2xl">
               Building seamless digital experiences from front to back, one
               stack at a time.
             </p>
           </div>
 
           {/* Decorative Graphic */}
-          <div className="mt-10 w-full max-w-5xl h-72 md:h-96 lg:h-[450px] bg-contain bg-no-repeat">
+          <div className="mt-10 w-full max-w-xs h-56 sm:max-w-md sm:h-72 md:max-w-3xl md:h-96 lg:h-[450px]">
             <Image
               src="/heroImage.png"
               alt="Decorative Graphic"
