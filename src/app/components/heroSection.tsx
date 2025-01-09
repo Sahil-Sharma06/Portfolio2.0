@@ -38,15 +38,17 @@ export default function HeroSection() {
           </div>
 
           {/* Decorative Graphic */}
-          <div className="mt-10 w-full max-w-xs h-56 sm:max-w-md sm:h-72 md:max-w-3xl md:h-96 lg:h-[450px]">
-            <Image
-              src="/heroImage.png"
-              alt="Decorative Graphic"
-              className="object-cover w-full h-full"
-              width={800}
-              height={400}
-              priority
-            />
+          <div className="flex items-center justify-center w-full mt-10">
+            <div className="w-full max-w-xs h-56 sm:max-w-md sm:h-72 md:max-w-3xl md:h-96 lg:h-[450px]">
+              <Image
+                src="/heroImage.png"
+                alt="Decorative Graphic"
+                className="object-cover w-full h-full"
+                width={800}
+                height={400}
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
