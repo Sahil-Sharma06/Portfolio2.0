@@ -33,7 +33,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="relative min-h-screen px-6 py-12 text-white bg-gradient-to-t from-gray-900 to-black">
+    <section className="relative min-h-screen px-6 py-12 text-white bg-gradient-to-t from-gray-900 to-black font-poppins">
       {/* Grid Overlay Background */}
       <div className="absolute inset-0 grid-overlay"></div>
 
@@ -42,7 +42,7 @@ export default function Projects() {
         <h2 className="text-4xl font-extrabold tracking-wide text-purple-500 md:text-5xl lg:text-6xl drop-shadow-lg">
           My Projects
         </h2>
-        <p className="mt-4 text-lg text-gray-300 md:text-xl">
+        <p className="mt-4 text-lg text-gray-300 font-open-sans md:text-xl">
           A showcase of the innovative work I’ve done, blending creativity with functionality.
         </p>
       </div>
@@ -71,7 +71,7 @@ export default function Projects() {
 
             {/* Overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 transition-opacity duration-300 bg-black opacity-0 bg-opacity-70 group-hover:opacity-100">
-              <h3 className="text-lg font-semibold text-white sm:text-xl">
+              <h3 className="text-lg font-semibold text-white sm:text-xl font-poppins">
                 {project.title}
               </h3>
               <div className="flex space-x-4">
@@ -90,7 +90,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-4 py-2 text-white bg-purple-600 rounded-lg hover:bg-purple-500"
+                  className="px-4 py-2 text-white bg-purple-600 rounded-lg hover:bg-purple-500 font-open-sans"
                   title="Live Preview"
                 >
                   Github

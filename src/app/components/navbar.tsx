@@ -25,7 +25,7 @@ export default function Navbar() {
         isScrolled
           ? "bg-gray-900 bg-opacity-90 border-gray-700"
           : "bg-transparent border-gray-500"
-      } flex items-center justify-between`}
+      } flex items-center justify-between font-poppins`}
     >
       {/* Logo */}
       <h1 className="text-lg font-bold text-white md:text-2xl whitespace-nowrap">
@@ -36,25 +36,25 @@ export default function Navbar() {
       <div className="items-center hidden space-x-8 md:flex lg:space-x-12">
         <a
           href="#about"
-          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white"
+          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
         >
           About Me
         </a>
         <a
           href="#experience"
-          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white"
+          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
         >
           Services
         </a>
         <a
           href="#projects"
-          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white"
+          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
         >
           Projects
         </a>
         <a
           href="#contact"
-          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white"
+          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
         >
           Contacts
         </a>
@@ -67,7 +67,7 @@ export default function Navbar() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="px-4 py-2 text-sm font-semibold text-black bg-white rounded-full sm:px-6 lg:text-base hover:bg-gray-200">
+          <button className="px-4 py-2 text-sm font-semibold text-black bg-white rounded-full sm:px-6 lg:text-base hover:bg-gray-200 font-open-sans">
             Resume
           </button>
         </a>
@@ -97,7 +97,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Menu */}
       {isOpen && (
-        <div className="absolute left-0 w-full py-4 bg-black border-t border-gray-700 top-16 bg-opacity-90 md:hidden">
+        <div className="absolute left-0 w-full py-4 bg-black border-t border-gray-700 top-16 bg-opacity-90 md:hidden font-open-sans">
           <div className="flex flex-col items-center space-y-4">
             <a
               href="#about"

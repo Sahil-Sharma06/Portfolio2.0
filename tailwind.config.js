@@ -12,6 +12,10 @@ module.exports = {
       backgroundColor: {
         'custom-dark': '#041423',
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        openSans: ['Open Sans', 'sans-serif'],
+      },
     },
   },
   plugins: [],

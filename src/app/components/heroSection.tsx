@@ -15,7 +15,7 @@ export default function HeroSection() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative w-full min-h-screen pt-[106px] flex flex-col items-center justify-center text-center bg-gradient-to-b from-gray-900 to-black"
+        className="relative w-full min-h-screen pt-[106px] flex flex-col items-center justify-center text-center bg-gradient-to-b from-gray-900 to-black font-poppins"
       >
         {/* Grid Overlay */}
         <div className="absolute inset-0 grid-overlay"></div>
@@ -31,7 +31,7 @@ export default function HeroSection() {
 
           {/* Subtitle Text */}
           <div className="flex justify-center mt-6">
-            <p className="max-w-lg text-base text-center text-gray-300 sm:text-lg md:text-xl lg:text-2xl">
+            <p className="max-w-lg text-base text-center text-gray-300 font-open-sans sm:text-lg md:text-xl lg:text-2xl">
               Building seamless digital experiences from front to back, one
               stack at a time.
             </p>

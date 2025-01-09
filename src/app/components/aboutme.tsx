@@ -4,7 +4,7 @@ import React from "react";
 
 export default function AboutMe() {
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-10 text-white md:flex-row bg-gradient-to-b from-black to-gray-900">
+    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-10 text-white md:flex-row bg-gradient-to-b from-black to-gray-900 font-poppins">
       {/* Grid Overlay Background */}
       <div className="grid-overlay"></div>
 
@@ -15,14 +15,14 @@ export default function AboutMe() {
             About Me
           </h2>
         </div>
-        <p className="mt-4 text-base leading-relaxed text-center text-gray-300 md:text-left sm:text-lg lg:text-xl">
+        <p className="mt-4 text-base leading-relaxed text-center text-gray-300 font-open-sans md:text-left sm:text-lg lg:text-xl">
           I’m Sahil Sharma, a passionate and proactive developer with a
           foundation in Computer Science and Engineering at SRM University,
           Andhra Pradesh. My journey in tech has been marked by my commitment
           to building impactful applications, ranging from interactive web
           projects to advanced machine learning models.
         </p>
-        <p className="mt-4 text-sm leading-relaxed text-center text-gray-400 md:text-left sm:text-base lg:text-lg">
+        <p className="mt-4 text-sm leading-relaxed text-center text-gray-400 font-open-sans md:text-left sm:text-base lg:text-lg">
           During my time with NextTech Lab, I honed my skills in front-end
           development, crafting seamless user experiences and dynamic
           data-driven functionalities using React and JavaScript. My project
@@ -32,7 +32,7 @@ export default function AboutMe() {
           frameworks, and tools, I bring creativity and technical precision to
           every project.
         </p>
-        <p className="mt-4 text-sm leading-relaxed text-center text-gray-400 md:text-left sm:text-base lg:text-lg">
+        <p className="mt-4 text-sm leading-relaxed text-center text-gray-400 font-open-sans md:text-left sm:text-base lg:text-lg">
           Notable achievements include a second-place finish at HackSRM 4.0 and
           a core role with the Google Developers Group on campus, which reflect
           my dedication and drive to excel in the tech field. Whether it&apos;s
