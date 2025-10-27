@@ -117,7 +117,7 @@ export default function Contact() {
             <span>LeetCode</span>
           </a>
           {/* Instagram */}
-          <a
+          {/* <a
             href="https://www.instagram.com/sharma_ji0612/"
             target="_blank"
             rel="noopener noreferrer"
@@ -125,7 +125,7 @@ export default function Contact() {
           >
             <FaInstagram className="text-purple-500" />
             <span>Instagram</span>
-          </a>
+          </a> */}
         </div>
       </div>
     </section>

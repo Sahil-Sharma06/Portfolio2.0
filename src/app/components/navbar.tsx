@@ -63,7 +63,7 @@ export default function Navbar() {
       {/* Get In Touch Button */}
       <div className="hidden md:block">
         <a
-          href="https://drive.google.com/file/d/1Hsl9hu6zrzzRBBxRkskRHfhLdkzuO4r5/view?usp=sharing"
+          href="https://drive.google.com/file/d/1jZ9IhjtHXltbVzc5v13Rr8cl7uu_k2E7/view?usp=sharing"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -128,7 +128,7 @@ export default function Navbar() {
               Contacts
             </a>
             <a
-              href="https://drive.google.com/file/d/16SbiVHkWcrWNVdYhvFGbYMJmBI3WapPI/view?usp=sharing"
+              href="https://drive.google.com/file/d/1jZ9IhjtHXltbVzc5v13Rr8cl7uu_k2E7/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
