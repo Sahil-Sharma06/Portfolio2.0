@@ -33,17 +33,17 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section className="relative min-h-screen px-6 py-12 text-white bg-gradient-to-t from-gray-900 to-black font-poppins">
+    <section className="relative min-h-screen px-6 py-12 text-white bg-black/50 font-poppins">
       {/* Grid Overlay Background */}
       <div className="absolute inset-0 grid-overlay"></div>
 
       {/* Title Section */}
       <div className="relative z-10 mb-12 text-center">
         <h2 className="text-4xl font-extrabold tracking-wide text-purple-500 md:text-5xl lg:text-6xl drop-shadow-lg">
-          My Projects
+          Creations
         </h2>
         <p className="mt-4 text-lg text-gray-300 font-open-sans md:text-xl">
-          A showcase of the innovative work I’ve done, blending creativity with functionality.
+          A showcase of the innovative work I've done, blending creativity with functionality.
         </p>
       </div>
 

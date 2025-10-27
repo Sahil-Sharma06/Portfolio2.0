@@ -27,7 +27,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-10 text-white bg-gradient-to-b from-gray-900 to-black font-poppins">
+    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-10 text-white bg-black/50 font-poppins">
       {/* Grid Overlay Background */}
       <div className="absolute inset-0 grid-overlay"></div>
 

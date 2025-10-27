@@ -13,8 +13,10 @@ module.exports = {
         'custom-dark': '#041423',
       },
       fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-        openSans: ['Open Sans', 'sans-serif'],
+        poppins: ['Outfit', 'sans-serif'],
+        openSans: ['Space Grotesk', 'sans-serif'],
+        heading: ['Outfit', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
       },
     },
   },

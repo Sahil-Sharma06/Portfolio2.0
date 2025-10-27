@@ -38,7 +38,7 @@ export default function Navbar() {
           href="#about"
           className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
         >
-          About Me
+          Origin
         </a>
         <a
           href="#experience"
@@ -50,13 +50,19 @@ export default function Navbar() {
           href="#projects"
           className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
         >
-          Projects
+          Creations
+        </a>
+        <a
+          href="#hackathons"
+          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
+        >
+          Triumphs
         </a>
         <a
           href="#contact"
           className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
         >
-          Contacts
+          Connect
         </a>
       </div>
 
@@ -104,28 +110,35 @@ export default function Navbar() {
               className="text-sm text-gray-300 hover:text-white"
               onClick={() => setIsOpen(false)}
             >
-              About Me
+              Origin
             </a>
             <a
               href="#experience"
               className="text-sm text-gray-300 hover:text-white"
               onClick={() => setIsOpen(false)}
             >
-              Experience
+              Arsenal
             </a>
             <a
               href="#projects"
               className="text-sm text-gray-300 hover:text-white"
               onClick={() => setIsOpen(false)}
             >
-              Projects
+              Creations
+            </a>
+            <a
+              href="#hackathons"
+              className="text-sm text-gray-300 hover:text-white"
+              onClick={() => setIsOpen(false)}
+            >
+              Triumphs
             </a>
             <a
               href="#contact"
               className="text-sm text-gray-300 hover:text-white"
               onClick={() => setIsOpen(false)}
             >
-              Contacts
+              Connect
             </a>
             <a
               href="https://drive.google.com/file/d/1jZ9IhjtHXltbVzc5v13Rr8cl7uu_k2E7/view?usp=sharing"

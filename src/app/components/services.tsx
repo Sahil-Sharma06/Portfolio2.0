@@ -125,7 +125,7 @@ export default function Services() {
   };
 
   return (
-    <section className="relative min-h-screen p-10 text-white bg-gradient-to-b from-gray-900 to-black font-poppins">
+    <section className="relative min-h-screen p-10 text-white bg-black/50 font-poppins">
       {/* Grid Overlay */}
       <div className="absolute inset-0 grid-overlay"></div>
 
@@ -133,8 +133,8 @@ export default function Services() {
       <div className="relative z-10 mx-auto max-w-7xl">
         {/* Title */}
         <div className="text-center">
-          <h2 className="mb-10 text-4xl font-bold">
-            <span className="text-purple-500">Services & Skills</span>
+          <h2 className="mb-10 text-4xl font-bold md:text-5xl lg:text-6xl">
+            <span className="text-purple-500">Services</span>
           </h2>
         </div>
         <div className="grid grid-cols-1 gap-8 mb-16 md:grid-cols-3">
