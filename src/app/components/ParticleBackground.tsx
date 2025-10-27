@@ -30,7 +30,8 @@ export default function ParticleBackground() {
 
     // Particle settings
     const particles: Particle[] = [];
-    const particleCount = 165;
+    // Fewer particles on mobile devices for better performance and cleaner look
+    const particleCount = window.innerWidth < 768 ? 50 : window.innerWidth < 1024 ? 100 : 165;
     const connectionDistance = 120;
     const mouse = { x: 0, y: 0, radius: 200 };
 

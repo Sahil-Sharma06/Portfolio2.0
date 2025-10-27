@@ -117,7 +117,7 @@ export default function Navbar() {
               className="text-sm text-gray-300 hover:text-white"
               onClick={() => setIsOpen(false)}
             >
-              Arsenal
+              Services
             </a>
             <a
               href="#projects"
