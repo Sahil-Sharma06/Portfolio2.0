@@ -78,9 +78,18 @@ export default function ParticleBackground() {
           particle.vy -= Math.sin(angle) * force * 0.5;
         }
 
-        // Friction - reduced to allow more independent movement
-        particle.vx *= 0.98;
-        particle.vy *= 0.98;
+        // Apply minimal friction to maintain movement
+        particle.vx *= 0.995;
+        particle.vy *= 0.995;
+
+        // Keep particles moving - add base velocity if too slow
+        const minSpeed = 0.3;
+        const currentSpeed = Math.sqrt(particle.vx * particle.vx + particle.vy * particle.vy);
+        if (currentSpeed < minSpeed) {
+          const angle = Math.atan2(particle.vy, particle.vx);
+          particle.vx = Math.cos(angle) * minSpeed;
+          particle.vy = Math.sin(angle) * minSpeed;
+        }
 
         // Draw particle
         ctx.beginPath();
