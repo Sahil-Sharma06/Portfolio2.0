@@ -32,7 +32,6 @@ export default function ParticleBackground() {
     const particles: Particle[] = [];
     // Fewer particles on mobile devices for better performance and cleaner look
     const particleCount = window.innerWidth < 768 ? 50 : window.innerWidth < 1024 ? 100 : 165;
-    const connectionDistance = 120;
     const mouse = { x: 0, y: 0, radius: 200 };
 
     // Create particles
@@ -58,7 +57,7 @@ export default function ParticleBackground() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Update and draw particles
-      particles.forEach((particle, i) => {
+      particles.forEach((particle) => {
         // Move particle
         particle.x += particle.vx;
         particle.y += particle.vy;

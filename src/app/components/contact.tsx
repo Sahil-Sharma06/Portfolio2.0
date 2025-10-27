@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import {
-  FaInstagram,
   FaGithub,
   FaTwitter,
   FaMedium,

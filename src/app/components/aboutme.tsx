@@ -39,7 +39,7 @@ export default function AboutMe() {
             </h2>
           </div>
           <p className="mt-4 text-lg leading-relaxed text-center text-gray-300 font-open-sans md:text-left sm:text-xl lg:text-xl">
-            I'm Sahil Sharma, a passionate and proactive developer with a
+            I&apos;m Sahil Sharma, a passionate and proactive developer with a
             foundation in Computer Science and Engineering at SRM University,
             Andhra Pradesh. My journey in tech has been marked by my commitment
             to building impactful applications, ranging from interactive web

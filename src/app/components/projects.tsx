@@ -43,7 +43,7 @@ export default function Projects() {
           Creations
         </h2>
         <p className="mt-4 text-lg text-gray-300 font-open-sans md:text-xl">
-          A showcase of the innovative work I've done, blending creativity with functionality.
+          A showcase of the innovative work I&apos;ve done, blending creativity with functionality.
         </p>
       </div>
 
