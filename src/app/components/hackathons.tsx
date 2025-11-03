@@ -5,16 +5,10 @@ import { FaTrophy, FaCalendar } from "react-icons/fa";
 
 const hackathons = [
   {
-    year: "2022",
-    title: "HackSRM 4.0",
-    position: "Runner Up",
-    description: "Project: DISS-TRACT is a browser extension that blocks distracting sites to help you focus.",
-  },
-  {
-    year: "2023",
-    title: "Appwrite Hackathon",
-    position: "Finalist",
-    description: "Project: NyxAPI is a mock API platform that speeds frontend dev by simulating APIs.",
+    year: "2025",
+    title: "EthGlobal NewDelhi",
+    position: "Winner",
+    description: "Project: Bringing Simplicity to Crypto Investing Through AI-Powered Clusters",
   },
   {
     year: "2024",
@@ -23,10 +17,16 @@ const hackathons = [
     description: "Project: QliQ uses NFT metadata for targeted Web3 ads, balancing privacy and revenue.",
   },
   {
-    year: "2025",
-    title: "EthGlobal NewDelhi",
-    position: "Winner",
-    description: "Project: Bringing Simplicity to Crypto Investing Through AI-Powered Clusters",
+    year: "2023",
+    title: "Appwrite Hackathon",
+    position: "Finalist",
+    description: "Project: NyxAPI is a mock API platform that speeds frontend dev by simulating APIs.",
+  },
+  {
+    year: "2022",
+    title: "HackSRM 4.0",
+    position: "Runner Up",
+    description: "Project: DISS-TRACT is a browser extension that blocks distracting sites to help you focus.",
   },
 ];
 

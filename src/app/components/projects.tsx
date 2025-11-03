@@ -7,25 +7,25 @@ import { FaGithub } from "react-icons/fa";
 const projects = [
   {
     title: "NyxAPI",
-    image: "/nyx.jpg",
+    image: "/nyx.png",
     github: "https://github.com/Sahil-Sharma06/NyxAPI",
     preview: "https://nyxapi.example.com",
   },
   {
     title: "RojPagar",
-    image: "/RP.jpg",
+    image: "/rojPagar.png",
     github: "https://github.com/Sahil-Sharma06/RojPagar",
     preview: "https://rp-management.example.com",
   },
   {
     title: "Talk Trail",
-    image: "/tt.jpg",
+    image: "/tt.png",
     github: "https://github.com/Sahil-Sharma06/Talk-Trail",
     preview: "https://tt-scheduler.example.com",
   },
   {
     title: "Adhikar",
-    image: "/adhikar.jpg",
+    image: "/ad.png",
     github: "https://github.com/Sahil-Sharma06/Adhikar",
     preview: "https://adhikar.example.com",
   },
