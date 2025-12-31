@@ -16,7 +16,7 @@ export default function Contact() {
   const [showNotification, setShowNotification] = useState(false);
 
   const handleCopyEmail = () => {
-    const email = "thisissharma@gmail.com";
+    const email = "thisisssharma@gmail.com";
     navigator.clipboard.writeText(email).then(() => {
       setShowNotification(true);
       setTimeout(() => {
@@ -51,7 +51,7 @@ export default function Contact() {
             title="Click to copy email"
           >
             <FaEnvelope />
-            <span>thisissharma@gmail.com</span>
+            <span>thisisssharma@gmail.com</span>
           </div>
           {/* Location */}
           <div className="flex items-center gap-2 px-4 py-2 text-base font-medium text-white border border-gray-500 rounded-lg md:text-lg font-open-sans">
