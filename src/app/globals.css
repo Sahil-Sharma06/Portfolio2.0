@@ -1,102 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background: #000;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0E0E0C;
+  color: #E8E4DC;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* Particle background container */
-#tsparticles {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 0;
+/* Hide system cursor on desktop — CustomCursor takes over */
+@media (pointer: fine) {
+  body, a, button { cursor: none; }
 }
 
-/* globals.css or Hero.module.css */
-
-.grid-overlay {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr); /* Adjust as needed */
-  grid-template-rows: repeat(8, 1fr);     /* Adjust as needed */
-  pointer-events: none;                   /* Prevent interaction */
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 100px 100px;           /* Adjust grid cell size */
-  opacity: 1;                           /* Lower opacity for subtlety */
-  z-index: 0;
-}
-
-.grid-overlay-about {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr); /* Adjust as needed */
-  grid-template-rows: repeat(8, 1fr);     /* Adjust as needed */
-  pointer-events: none;                   /* Prevent interaction */
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 100px 100px;           /* Adjust grid cell size */
-  opacity: 1;                           /* Lower opacity for subtlety */
-  z-index: 0;
-}
-
-/* Marquee animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(100%);
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot {
+    display: none;
   }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.animate-marquee {
-  display: flex;
-  animation: marquee 10s linear infinite;
-  white-space: nowrap;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.animate-marquee {
-  display: flex;
-  animation: marquee 20s linear infinite linear;
-  white-space: nowrap;
-}
-
-/* Adjust speed and duration for each row */
-.animate-marquee:nth-child(1) {
-  animation-duration: 30s; /* Row 1 speed */
-}
-.animate-marquee:nth-child(2) {
-  animation-duration: 25s; /* Row 2 speed */
-}
-.animate-marquee:nth-child(3) {
-  animation-duration: 35s; /* Row 3 speed */
 }

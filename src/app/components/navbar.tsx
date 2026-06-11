@@ -2,155 +2,91 @@
 
 import { useState, useEffect } from "react";
 
+const links = [
+  { href: "#about",        label: "About" },
+  { href: "#skills",       label: "Skills" },
+  { href: "#projects",     label: "Work" },
+  { href: "#achievements", label: "Achievements" },
+  { href: "#contact",      label: "Contact" },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <nav
-      className={`fixed top-0 left-0 z-50 w-full px-4 sm:px-6 md:px-10 py-4 md:py-6 shadow-md transition-colors duration-300 ${
-        isScrolled
-          ? "bg-gray-900 bg-opacity-90 border-gray-700"
-          : "bg-transparent border-gray-500"
-      } flex items-center justify-between font-poppins`}
+      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-14 py-5 transition-colors duration-300 border-b border-border ${
+        scrolled ? "bg-bg/90 backdrop-blur-xl" : "bg-transparent"
+      }`}
     >
       {/* Logo */}
-      <h1 className="text-lg font-bold text-white md:text-2xl whitespace-nowrap">
+      <a
+        href="#hero"
+        data-hover=""
+        className="font-syne font-semibold text-sm tracking-wide text-fg no-underline"
+      >
         Sahil Sharma
-      </h1>
+      </a>
 
-      {/* Desktop Links */}
-      <div className="items-center hidden space-x-8 md:flex lg:space-x-12">
-        <a
-          href="#about"
-          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
-        >
-          Origin
-        </a>
-        <a
-          href="#experience"
-          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
-        >
-          Services
-        </a>
-        <a
-          href="#projects"
-          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
-        >
-          Creations
-        </a>
-        <a
-          href="#hackathons"
-          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
-        >
-          Triumphs
-        </a>
-        <a
-          href="#contact"
-          className="text-sm font-medium text-gray-300 lg:text-base hover:text-white font-open-sans"
-        >
-          Connect
-        </a>
-      </div>
+      {/* Desktop links */}
+      <ul className="hidden md:flex gap-10 list-none">
+        {links.map((l) => (
+          <li key={l.href}>
+            <a
+              href={l.href}
+              data-hover=""
+              className="relative text-[11px] font-normal tracking-[0.08em] uppercase text-muted no-underline transition-colors duration-200 hover:text-fg group"
+            >
+              {l.label}
+              <span className="absolute left-0 -bottom-0.5 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
+            </a>
+          </li>
+        ))}
+      </ul>
 
-      {/* Get In Touch Button */}
-      <div className="hidden md:block">
-        <a
-          href="https://drive.google.com/file/d/1jZ9IhjtHXltbVzc5v13Rr8cl7uu_k2E7/view?usp=sharing"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button className="px-4 py-2 text-sm font-semibold text-black bg-white rounded-full sm:px-6 lg:text-base hover:bg-gray-200 font-open-sans">
-            Resume
-          </button>
-        </a>
-      </div>
-
-      {/* Mobile Menu Icon */}
+      {/* Mobile hamburger */}
       <button
-        className="text-white md:hidden"
+        className="md:hidden text-fg"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
       >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M4 6h16M4 12h16m-7 6h7"
-          />
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {isOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />
+          )}
         </svg>
       </button>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile menu */}
       {isOpen && (
-        <div className="absolute left-0 w-full py-4 bg-black border-t border-gray-700 top-16 bg-opacity-90 md:hidden font-open-sans">
-          <div className="flex flex-col items-center space-y-4">
-            <a
-              href="#about"
-              className="text-sm text-gray-300 hover:text-white"
-              onClick={() => setIsOpen(false)}
-            >
-              Origin
-            </a>
-            <a
-              href="#experience"
-              className="text-sm text-gray-300 hover:text-white"
-              onClick={() => setIsOpen(false)}
-            >
-              Services
-            </a>
-            <a
-              href="#projects"
-              className="text-sm text-gray-300 hover:text-white"
-              onClick={() => setIsOpen(false)}
-            >
-              Creations
-            </a>
-            <a
-              href="#hackathons"
-              className="text-sm text-gray-300 hover:text-white"
-              onClick={() => setIsOpen(false)}
-            >
-              Triumphs
-            </a>
-            <a
-              href="#contact"
-              className="text-sm text-gray-300 hover:text-white"
-              onClick={() => setIsOpen(false)}
-            >
-              Connect
-            </a>
+        <div className="absolute top-full left-0 w-full bg-bg/95 backdrop-blur-xl border-b border-border md:hidden">
+          <div className="flex flex-col items-center gap-5 py-6">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setIsOpen(false)}
+                className="text-xs tracking-[0.08em] uppercase text-muted hover:text-fg transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
             <a
               href="https://drive.google.com/file/d/1jZ9IhjtHXltbVzc5v13Rr8cl7uu_k2E7/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
+              className="text-xs tracking-[0.06em] uppercase px-5 py-2 border border-border text-muted rounded-[1px] hover:border-muted hover:text-fg"
             >
-              <button
-                className="px-4 py-2 text-sm font-semibold text-black bg-white rounded-full hover:bg-gray-200"
-                onClick={() => setIsOpen(false)}
-              >
-                Resume
-              </button>
+              Resume ↗
             </a>
           </div>
         </div>

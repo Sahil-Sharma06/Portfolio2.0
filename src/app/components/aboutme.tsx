@@ -1,69 +1,94 @@
 "use client";
-import Image from "next/image";
+
 import React from "react";
+import { useReveal } from "./useReveal";
 
-export default function AboutMe() {
+function RevealDiv({
+  children,
+  className = "",
+  delay = "delay-0",
+}: {
+  children: React.ReactNode;
+  className?: string;
+  delay?: string;
+}) {
+  const { ref, visible } = useReveal();
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-10 text-white md:flex-row bg-black/50 font-poppins">
-      {/* Grid Overlay Background */}
-      <div className="grid-overlay"></div>
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ${delay} ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+      } ${className}`}
+    >
+      {children}
+    </div>
+  );
+}
 
-      {/* Main Content */}
-      <div className="relative z-10 flex flex-col items-center w-full md:flex-row md:items-start md:space-x-10">
-        {/* Heading */}
-        <div className="mb-6 text-center md:hidden">
-          <h2 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-            Origin
-          </h2>
+export default function About() {
+  return (
+    <section id="about" className="border-t border-border">
+      <div className="px-14 py-28 max-w-[1020px] mx-auto max-sm:px-5 max-sm:py-16">
+        {/* Section label */}
+        <div className="flex items-center gap-4 text-[11px] tracking-[0.12em] uppercase text-muted mb-16">
+          <span>About</span>
+          <span className="flex-1 h-px bg-border" />
         </div>
 
-        {/* Image Section */}
-        <div className="flex justify-center flex-1 mt-6 md:mt-0">
-          <div className="overflow-hidden rounded-full shadow-lg w-64 h-64 sm:w-72 sm:h-72 md:w-[300px] md:h-[300px] lg:w-[350px] lg:h-[350px]">
-            <Image
-              src="/MyImage.jpg"
-              alt="Profile"
-              className="object-cover w-full h-full"
-              width={350}
-              height={350}
-            />
-          </div>
-        </div>
-
-        {/* Text Content */}
-        <div className="flex-1 max-w-5xl px-4 sm:px-8 md:px-10 lg:pr-20">
-          {/* Heading for larger screens */}
-          <div className="hidden mb-6 text-left md:block">
-            <h2 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-              Origin
+        <div className="grid grid-cols-[220px_1fr] gap-24 items-start max-sm:grid-cols-1 max-sm:gap-10">
+          {/* Sidebar */}
+          <RevealDiv>
+            <h2 className="font-syne font-semibold text-[1.4rem] leading-tight mb-1 text-fg">
+              Sahil Sharma
             </h2>
-          </div>
-          <p className="mt-4 text-lg leading-relaxed text-center text-gray-300 font-open-sans md:text-left sm:text-xl lg:text-xl">
-            I&apos;m Sahil Sharma, a passionate and proactive developer with a
-            foundation in Computer Science and Engineering at SRM University,
-            Andhra Pradesh. My journey in tech has been marked by my commitment
-            to building impactful applications, ranging from interactive web
-            projects to advanced machine learning models.
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-center text-gray-400 font-open-sans md:text-left sm:text-lg lg:text-lg">
-            During my time with NextTech Lab, I honed my skills in front-end
-            development, crafting seamless user experiences and dynamic
-            data-driven functionalities using React and JavaScript. My project
-            portfolio reflects my versatility and depth, featuring works like
-            NyxAPI, a mock API platform, and Adhikar, an AI-powered
-            categorization tool for legal data. With a diverse skill set
-            spanning languages, frameworks, and tools, I bring creativity and
-            technical precision to every project.
-          </p>
-          <p className="mt-4 text-sm leading-relaxed text-center text-gray-400 font-open-sans md:text-left sm:text-base lg:text-lg">
-            Notable achievements include a second-place finish at HackSRM 4.0
-            and a core role with the Google Developers Group on campus, which
-            reflect my dedication and drive to excel in the tech field. Whether
-            it&apos;s creating productive Chrome extensions or implementing
-            secure backend architectures, I am continually seeking ways to
-            expand my expertise and make a difference in the world of
-            technology.
-          </p>
+            <p className="text-[12px] text-muted tracking-[0.04em] mb-6 leading-relaxed">
+              CSE Student
+              <br />
+              SRM University, Andhra Pradesh
+            </p>
+            <div className="flex flex-col gap-2 text-[12px] text-muted">
+              <span className="flex items-center gap-2">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M12 21c-4-4-7-7.5-7-11a7 7 0 0114 0c0 3.5-3 7-7 11z"/>
+                  <circle cx="12" cy="10" r="2"/>
+                </svg>
+                Bokaro, India
+              </span>
+              <span className="flex items-center gap-2">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <path d="M8 21h8M12 17v4"/>
+                </svg>
+                Google Developers Group
+              </span>
+            </div>
+          </RevealDiv>
+
+          {/* Body */}
+          <RevealDiv delay="delay-150">
+            <div className="text-[#A8A49C] text-[15px] leading-[1.85]">
+              <p>
+                I&apos;m a proactive developer with a foundation in Computer Science and
+                a focus on building things that matter. My work spans{" "}
+                <strong className="text-fg font-medium">interactive web applications</strong>{" "}
+                and{" "}
+                <strong className="text-fg font-medium">machine learning tools</strong>{" "}
+                — I care about both the craft and the impact.
+              </p>
+              <p className="mt-5">
+                At NextTech Lab I deepened my React and JavaScript skills, building
+                data-driven experiences with care for detail. Projects like{" "}
+                <strong className="text-fg font-medium">NyxAPI</strong> and{" "}
+                <strong className="text-fg font-medium">Adhikar</strong> come from a
+                real frustration with tools that are clunky or inaccessible.
+              </p>
+              <p className="mt-5">
+                Outside the code editor, I&apos;ve competed at EthGlobal New Delhi
+                (Winner), HackSRM 4.0 (Runner Up), and the Appwrite Hackathon
+                (Finalist). I learn best under pressure.
+              </p>
+            </div>
+          </RevealDiv>
         </div>
       </div>
     </section>

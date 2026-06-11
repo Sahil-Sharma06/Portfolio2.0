@@ -1,130 +1,96 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  FaGithub,
-  FaTwitter,
-  FaMedium,
-  FaLinkedin,
-  FaEnvelope,
-  FaMapMarkerAlt,
-} from "react-icons/fa";
-import { SiLeetcode } from "react-icons/si";
-import { AiOutlineCheckCircle } from "react-icons/ai"; // Import green tick icon
+import { useReveal } from "./useReveal";
+
+const socials = [
+  { label: "GitHub",   href: "https://github.com/Sahil-Sharma06/" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/sahil-sharma-a735b4247/" },
+  { label: "Twitter",  href: "https://x.com/Sharmaa_ji06" },
+  { label: "Medium",   href: "https://medium.com/@thisisssharma" },
+  { label: "LeetCode", href: "https://leetcode.com/u/SSharma06/" },
+];
 
 export default function Contact() {
-  const [showNotification, setShowNotification] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const left = useReveal();
+  const right = useReveal();
 
-  const handleCopyEmail = () => {
-    const email = "thisisssharma@gmail.com";
-    navigator.clipboard.writeText(email).then(() => {
-      setShowNotification(true);
-      setTimeout(() => {
-        setShowNotification(false);
-      }, 3000); // Hide the notification after 3 seconds
+  const handleCopy = () => {
+    navigator.clipboard.writeText("thisisssharma@gmail.com").then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2500);
     });
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-10 text-white bg-black/50 font-poppins">
-      {/* Grid Overlay Background */}
-      <div className="absolute inset-0 grid-overlay"></div>
-
-      {/* Notification Popup */}
-      {showNotification && (
-        <div className="fixed z-50 flex items-center gap-2 px-4 py-2 text-sm text-black transition-all duration-300 transform -translate-x-1/2 bg-white rounded-lg shadow-lg top-5 left-1/2 md:text-base">
-          <span>Email copied to clipboard!</span>
-          <AiOutlineCheckCircle className="w-5 h-5 text-green-400" />
+    <section id="contact" className="border-t border-border">
+      <div className="px-14 py-28 max-w-[1020px] mx-auto max-sm:px-5 max-sm:py-16">
+        {/* Section label */}
+        <div className="flex items-center gap-4 text-[11px] tracking-[0.12em] uppercase text-muted mb-16">
+          <span>Contact</span>
+          <span className="flex-1 h-px bg-border" />
         </div>
-      )}
 
-      {/* Get in Touch Section */}
-      <div className="relative z-10 mb-12 text-center">
-        <h1 className="text-4xl font-bold md:text-5xl">
-          Get in <span className="text-purple-500">Touch</span>
-        </h1>
-        <div className="flex flex-wrap justify-center gap-6 mt-8">
-          {/* Email */}
+        <div className="flex justify-between items-end gap-12 flex-wrap max-sm:flex-col max-sm:items-start">
+          {/* Left */}
           <div
-            className="flex items-center gap-2 px-4 py-2 text-base font-medium text-white border border-gray-500 rounded-lg cursor-pointer md:text-lg font-open-sans hover:bg-gray-800"
-            onClick={handleCopyEmail}
-            title="Click to copy email"
+            ref={left.ref}
+            className={`transition-all duration-700 ${
+              left.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            }`}
           >
-            <FaEnvelope />
-            <span>thisisssharma@gmail.com</span>
+            <h2 className="font-syne font-bold leading-[1.05] tracking-[-0.02em] text-[clamp(2rem,5vw,3.5rem)] text-fg mb-6">
+              Got a project?
+              <br />
+              Let&apos;s <span className="text-accent">talk.</span>
+            </h2>
+            <p className="text-[14px] text-muted max-w-[340px] leading-relaxed">
+              I&apos;m open to freelance work, collaborations, and interesting
+              problems. Don&apos;t hesitate to reach out.
+            </p>
           </div>
-          {/* Location */}
-          <div className="flex items-center gap-2 px-4 py-2 text-base font-medium text-white border border-gray-500 rounded-lg md:text-lg font-open-sans">
-            <FaMapMarkerAlt />
-            <span>Bokaro Steel City, India</span>
-          </div>
-        </div>
-      </div>
 
-      {/* Social Media Section */}
-      <div className="relative z-10 text-center">
-        <h2 className="mb-8 text-3xl font-bold md:text-4xl">Follow Me</h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          {/* GitHub */}
-          <a
-            href="https://github.com/Sahil-Sharma06/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300 md:text-lg font-open-sans"
+          {/* Right */}
+          <div
+            ref={right.ref}
+            className={`flex flex-col items-end gap-5 max-sm:items-start transition-all duration-700 delay-150 ${
+              right.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            }`}
           >
-            <FaGithub className="text-gray-800" />
-            <span>GitHub</span>
-          </a>
-          {/* Twitter */}
-          <a
-            href="https://x.com/Sharmaa_ji06"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300 md:text-lg font-open-sans"
-          >
-            <FaTwitter className="text-black" />
-            <span>Twitter</span>
-          </a>
-          {/* Medium */}
-          <a
-            href="https://medium.com/@thisisssharma"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300 md:text-lg font-open-sans"
-          >
-            <FaMedium className="text-black" />
-            <span>Medium</span>
-          </a>
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/sahil-sharma-a735b4247/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300 md:text-lg font-open-sans"
-          >
-            <FaLinkedin className="text-blue-700" />
-            <span>LinkedIn</span>
-          </a>
-          {/* LeetCode */}
-          <a
-            href="https://leetcode.com/u/SSharma06/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300 md:text-lg font-open-sans"
-          >
-            <SiLeetcode className="text-orange-500" />
-            <span>LeetCode</span>
-          </a>
-          {/* Instagram */}
-          {/* <a
-            href="https://www.instagram.com/sharma_ji0612/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 text-base font-medium text-gray-900 bg-gray-200 rounded-lg hover:bg-gray-300 md:text-lg font-open-sans"
-          >
-            <FaInstagram className="text-purple-500" />
-            <span>Instagram</span>
-          </a> */}
+            {/* Email */}
+            <button
+              onClick={handleCopy}
+              data-hover="Copy"
+              className="font-syne text-[1rem] text-fg border-b border-muted pb-0.5 transition-colors duration-200 hover:text-accent hover:border-accent bg-transparent cursor-pointer"
+              title="Click to copy"
+            >
+              thisisssharma@gmail.com
+            </button>
+
+            {/* Copy toast */}
+            {copied && (
+              <span className="text-[11px] text-accent tracking-wide">
+                Copied to clipboard ✓
+              </span>
+            )}
+
+            {/* Socials */}
+            <div className="flex gap-6 flex-wrap">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-hover={s.label}
+                  className="text-[11px] tracking-[0.08em] uppercase text-muted no-underline transition-colors duration-200 hover:text-accent"
+                >
+                  {s.label}
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

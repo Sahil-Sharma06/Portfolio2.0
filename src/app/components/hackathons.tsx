@@ -1,101 +1,79 @@
 "use client";
 
 import React from "react";
-import { FaTrophy, FaCalendar } from "react-icons/fa";
+import { useReveal } from "./useReveal";
 
-const hackathons = [
+const achievements = [
   {
     year: "2025",
-    title: "EthGlobal NewDelhi",
-    position: "Winner",
-    description: "Project: Bringing Simplicity to Crypto Investing Through AI-Powered Clusters",
+    event: "EthGlobal New Delhi",
+    project: "AI-powered clusters for crypto investing.",
+    badge: "Winner",
+    badgeClass: "text-accent border-accent",
   },
   {
     year: "2024",
-    title: "Unfold 2024",
-    position: "Participant",
-    description: "Project: QliQ uses NFT metadata for targeted Web3 ads, balancing privacy and revenue.",
+    event: "Unfold 2024",
+    project: "QliQ — NFT metadata for privacy-first Web3 ads.",
+    badge: "Participant",
+    badgeClass: "text-muted border-border",
   },
   {
     year: "2023",
-    title: "Appwrite Hackathon",
-    position: "Finalist",
-    description: "Project: NyxAPI is a mock API platform that speeds frontend dev by simulating APIs.",
+    event: "Appwrite Hackathon",
+    project: "NyxAPI — mock API platform for faster frontend dev.",
+    badge: "Finalist",
+    badgeClass: "text-muted border-border",
   },
   {
     year: "2022",
-    title: "HackSRM 4.0",
-    position: "Runner Up",
-    description: "Project: DISS-TRACT is a browser extension that blocks distracting sites to help you focus.",
+    event: "HackSRM 4.0",
+    project: "DISS-TRACT — browser extension to kill distractions.",
+    badge: "Runner Up",
+    badgeClass: "text-[#8CA8C5] border-[#1e2d3a]",
   },
 ];
 
-export default function Hackathons() {
+function AchievementRow({ a }: { a: typeof achievements[number] }) {
+  const { ref, visible } = useReveal();
   return (
-    <section className="relative min-h-screen px-6 py-12 text-white bg-black/50 font-poppins">
-      {/* Grid Overlay Background */}
-      <div className="absolute inset-0 grid-overlay"></div>
-
-      {/* Title Section */}
-      <div className="relative z-10 mb-16 text-center">
-        <h2 className="text-4xl font-extrabold tracking-wide text-purple-500 md:text-5xl lg:text-6xl drop-shadow-lg">
-          Triumphs
-        </h2>
-        <p className="mt-4 text-lg text-gray-300 font-open-sans md:text-xl">
-          My timeline of innovation, collaboration, and competitive coding experiences.
+    <div
+      ref={ref}
+      className={`grid grid-cols-[80px_1fr_120px] gap-10 items-center py-7 border-b border-border max-sm:grid-cols-[60px_1fr] max-sm:gap-6 transition-all duration-700 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+      }`}
+    >
+      <span className="font-syne text-[12px] text-muted tracking-[0.04em]">
+        {a.year}
+      </span>
+      <div>
+        <p className="font-syne font-semibold text-[1rem] text-fg mb-1">
+          {a.event}
         </p>
+        <p className="text-[12px] text-muted">{a.project}</p>
       </div>
+      <span
+        className={`hidden sm:block justify-self-end text-[10px] tracking-[0.1em] uppercase px-3 py-1 border rounded-[1px] ${a.badgeClass}`}
+      >
+        {a.badge}
+      </span>
+    </div>
+  );
+}
 
-      {/* Timeline */}
-      <div className="relative z-10 max-w-5xl mx-auto">
-        {/* Vertical Line */}
-        <div className="absolute top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 via-purple-400 to-purple-500 left-8 md:left-1/2 md:transform md:-translate-x-1/2"></div>
+export default function Achievements() {
+  return (
+    <section id="achievements" className="border-t border-border">
+      <div className="px-14 py-28 max-w-[1020px] mx-auto max-sm:px-5 max-sm:py-16">
+        {/* Section label */}
+        <div className="flex items-center gap-4 text-[11px] tracking-[0.12em] uppercase text-muted mb-16">
+          <span>Achievements</span>
+          <span className="flex-1 h-px bg-border" />
+        </div>
 
-        {/* Timeline Items */}
-        <div className="pb-8 space-y-16">
-          {hackathons.map((hackathon, index) => (
-            <div
-              key={index}
-              className={`relative flex items-start ${
-                index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-              } flex-col md:items-center`}
-            >
-              {/* Timeline Dot */}
-              <div className="absolute w-6 h-6 transform -translate-x-1/2 bg-purple-500 border-4 border-gray-900 rounded-full shadow-lg left-8 md:left-1/2 shadow-purple-500/50"></div>
-
-              {/* Content Card */}
-              <div
-                className={`ml-20 md:ml-0 md:w-[calc(50%-2.5rem)] ${
-                  index % 2 === 0 ? "md:pr-8" : "md:pl-8"
-                }`}
-              >
-                <div className="p-6 transition-all duration-300 border border-gray-700 rounded-lg shadow-lg bg-gradient-to-br from-gray-800 to-gray-900 hover:border-purple-500 hover:shadow-purple-500/30 hover:scale-[1.02]">
-                  {/* Year Badge */}
-                  <div className="inline-flex items-center px-4 py-1.5 mb-4 text-sm font-semibold text-purple-300 bg-purple-900 bg-opacity-40 rounded-full border border-purple-500 shadow-sm">
-                    <FaCalendar size={14} className="mr-2" />
-                    <span>{hackathon.year}</span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="mb-3 text-xl font-bold leading-tight text-white md:text-2xl font-poppins">
-                    {hackathon.title}
-                  </h3>
-
-                  {/* Position Badge */}
-                  <div className="inline-flex items-center px-3 py-1 mb-4 space-x-2 bg-yellow-900 bg-opacity-20 border border-yellow-500 rounded-full">
-                    <FaTrophy className="text-yellow-400" size={14} />
-                    <span className="text-base font-medium text-yellow-400 font-open-sans">
-                      {hackathon.position}
-                    </span>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-base leading-relaxed text-gray-300 font-open-sans">
-                    {hackathon.description}
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div className="flex flex-col">
+          {achievements.map((a) => (
+            <AchievementRow key={a.event} a={a} />
           ))}
         </div>
       </div>
