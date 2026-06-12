@@ -40,18 +40,20 @@ function ProjectItem({ project }: { project: typeof projects[number] }) {
       target="_blank"
       rel="noopener noreferrer"
       data-hover="View"
-      className={`group relative grid grid-cols-[52px_1fr_auto] gap-8 items-center py-8 border-b border-border no-underline text-inherit transition-[opacity,transform,padding-left] duration-500 hover:pl-4 max-sm:grid-cols-[36px_1fr_24px] max-sm:gap-4 ${
+      className={`group relative grid grid-cols-[52px_1fr_auto] gap-8 items-center py-8 border-b border-border no-underline text-inherit transition-[opacity,transform,padding-left,background] duration-500 hover:pl-4 max-sm:grid-cols-[36px_1fr_24px] max-sm:gap-4 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}
+      style={{ transitionDelay: `${(Number(project.idx.replace(/\D/g, "")) - 1) * 100}ms` }}
     >
       {/* Accent bar on hover */}
-      <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-accent scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
+      <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-transparent via-accent to-transparent scale-y-0 origin-top transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-y-100" />
+      <span className="absolute inset-0 bg-[linear-gradient(to_right,rgba(200,184,154,0.03)_0%,transparent_60%)] opacity-0 transition-opacity duration-500 pointer-events-none group-hover:opacity-100" />
 
       <span className="text-[11px] text-muted font-syne self-start pt-1">
         {project.idx}
       </span>
 
-      <div>
+      <div className="relative">
         <div className="flex items-center gap-3 mb-1.5">
           <h3 className="font-syne font-semibold text-[1.3rem] text-fg transition-colors duration-200 group-hover:text-accent">
             {project.name}
@@ -86,12 +88,14 @@ function MoreProjects() {
       target="_blank"
       rel="noopener noreferrer"
       data-hover="GitHub"
-      className={`group relative flex items-center justify-between border-b border-border py-8 no-underline text-inherit overflow-hidden transition-[opacity,transform,padding-left] duration-500 hover:pl-4 max-sm:flex-wrap max-sm:gap-4 ${
+      className={`group relative flex items-center justify-between border-b border-border py-8 no-underline text-inherit overflow-hidden transition-[opacity,transform,padding-left,background] duration-500 hover:pl-4 max-sm:flex-wrap max-sm:gap-4 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}
+      style={{ transitionDelay: `${projects.length * 100}ms` }}
     >
       {/* Accent bar */}
-      <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-muted scale-y-0 origin-top transition-transform duration-300 group-hover:scale-y-100" />
+      <span className="absolute left-0 top-0 bottom-0 w-0.5 bg-muted scale-y-0 origin-top transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-y-100" />
+      <span className="absolute inset-0 bg-[linear-gradient(to_right,rgba(200,184,154,0.03)_0%,transparent_60%)] opacity-0 transition-opacity duration-500 pointer-events-none group-hover:opacity-100" />
 
       {/* Scrolling marquee */}
       <div

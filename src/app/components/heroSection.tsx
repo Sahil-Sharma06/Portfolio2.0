@@ -2,6 +2,7 @@
 
 import Navbar from "./navbar";
 import About from "./aboutme";
+import Experience from "./experience";
 import Skills from "./services";
 import Projects from "./projects";
 import Achievements from "./hackathons";
@@ -83,6 +84,7 @@ export default function HeroSection() {
         </section>
 
         <About />
+        <Experience />
         <Skills />
         <Projects />
         <Achievements />
