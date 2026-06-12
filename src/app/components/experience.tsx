@@ -5,6 +5,13 @@ import { useReveal } from "./useReveal";
 
 const experiences = [
   {
+    period: "Jan 2025 — Apr 2025",
+    company: "BORD Labs",
+    type: "Internship · Remote",
+    role: "Full Stack Developer Intern",
+    desc: "Developed and maintained full-stack features across the product — owning backend APIs, database design, and frontend integration. Worked in a fast-moving startup environment with a focus on shipping and iteration speed.",
+  },
+  {
     period: "2022 — Present",
     company: "Freelancer",
     type: "Independent · Remote",
@@ -19,18 +26,11 @@ const experiences = [
     desc: "Built and iterated on responsive UI components for educational platforms, focusing on accessibility and clean interaction patterns. Collaborated with a cross-functional team to deliver features on tight timelines.",
   },
   {
-    period: "2024",
+    period: "Apr 2024 — Jun 2024",
     company: "Buildspace",
     type: "N&W Member · Remote · Part-time",
     role: "Builder",
     desc: "Part of Buildspace's Nights & Weekends cohort — a programme for builders shipping real projects outside of work hours. Used the structured sprints to sharpen product thinking and move ideas from zero to live.",
-  },
-  {
-    period: "Jan 2025 — Apr 2025",
-    company: "BORD Labs",
-    type: "Internship · Remote",
-    role: "Full Stack Developer Intern",
-    desc: "Developed and maintained full-stack features across the product — owning backend APIs, database design, and frontend integration. Worked in a fast-moving startup environment with a focus on shipping and iteration speed.",
   },
 ];
 
