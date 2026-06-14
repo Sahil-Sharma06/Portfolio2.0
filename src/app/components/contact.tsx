@@ -35,7 +35,7 @@ export default function Contact() {
         <div className="flex justify-between items-end gap-12 flex-wrap max-sm:flex-col max-sm:items-start">
           {/* Left */}
           <div
-            ref={left.ref}
+            ref={left.ref as React.Ref<HTMLDivElement>}
             className={`transition-all duration-700 ${
               left.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}
@@ -53,7 +53,7 @@ export default function Contact() {
 
           {/* Right */}
           <div
-            ref={right.ref}
+            ref={right.ref as React.Ref<HTMLDivElement>}
             className={`flex flex-col items-end gap-5 max-sm:items-start transition-all duration-700 delay-150 ${
               right.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }`}

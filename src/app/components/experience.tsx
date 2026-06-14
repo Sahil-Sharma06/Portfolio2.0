@@ -32,6 +32,13 @@ const experiences = [
     role: "Builder",
     desc: "Part of Buildspace's Nights & Weekends cohort — a programme for builders shipping real projects outside of work hours. Used the structured sprints to sharpen product thinking and move ideas from zero to live.",
   },
+  {
+    period: "Feb 2023 — Oct 2023",
+    company: "Norman Lab (NextTech Lab)",
+    type: "Associate · SRM University, AP",
+    role: "Full Stack Developer",
+    desc: "Worked as an associate at NextTech Lab, contributing to full-stack development across internal and client-facing projects. Deepened skills in React and JavaScript while building data-driven experiences with a focus on clean UI and robust backend integration.",
+  },
 ];
 
 function ExperienceRow({ item, index }: { item: typeof experiences[number]; index: number }) {
@@ -39,7 +46,7 @@ function ExperienceRow({ item, index }: { item: typeof experiences[number]; inde
 
   return (
     <div
-      ref={ref}
+      ref={ref as React.Ref<HTMLDivElement>}
       className={`group relative grid grid-cols-[200px_1fr] gap-12 items-start py-10 border-b border-border max-sm:grid-cols-1 max-sm:gap-3 transition-[opacity,transform,padding-left,background] duration-500 hover:pl-4 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
       }`}

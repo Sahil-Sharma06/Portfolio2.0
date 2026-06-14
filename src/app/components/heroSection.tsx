@@ -17,10 +17,10 @@ const socials = [
 ];
 
 const footerWords = [
-  { text: "Let's",    dim: false },
-  { text: "make",     dim: false },
-  { text: "some",     dim: true  },
-  { text: "thing.",   dim: false },
+  { text: "Let's",  dim: false },
+  { text: "Build",  dim: false },
+  { text: "some",   dim: true  },
+  { text: "thing.", dim: false },
 ];
 
 export default function HeroSection() {
@@ -96,7 +96,7 @@ export default function HeroSection() {
         {/* Big animated words */}
         <div
           className="flex items-baseline justify-center gap-3 mb-12 cursor-default flex-wrap"
-          aria-label="Let's make something"
+          aria-label="Let's Build something"
         >
           {footerWords.map((w) => (
             <span
@@ -115,20 +115,7 @@ export default function HeroSection() {
         {/* Bottom bar */}
         <div className="flex justify-between items-center border-t border-border pt-6 text-[11px] text-muted tracking-[0.04em] max-sm:flex-col max-sm:gap-4 max-sm:items-start">
           <span>© 2026 Sahil Sharma</span>
-          <div className="flex gap-6">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-hover={s.label}
-                className="text-muted no-underline text-[11px] tracking-[0.06em] uppercase transition-colors duration-200 hover:text-accent"
-              >
-                {s.label}
-              </a>
-            ))}
-          </div>
+          
         </div>
       </footer>
     </>

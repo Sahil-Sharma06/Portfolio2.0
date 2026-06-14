@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
  * The element transitions in when it enters the viewport.
  */
 export function useReveal(threshold = 0.1) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
